@@ -11,7 +11,7 @@ import android.widget.CursorAdapter;
 import android.widget.TextView;
 
 /**
- * Created by Marit on 22-11-2017.
+ * Created by Marit on 20-11-2017.
  */
 
 public class TodoAdapter extends CursorAdapter {
@@ -21,22 +21,18 @@ public class TodoAdapter extends CursorAdapter {
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-        Log.d("test", "hiiiiiii");
         return LayoutInflater.from(context).inflate(R.layout.row_todo, viewGroup, false);
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor){
         // Find the textview and checkbox
-        Log.d("test", "hiiiiiii");
         TextView todo = view.findViewById(R.id.textView2);
-        //TextView test = view.findViewById(R.id.textView);
         CheckBox box = view.findViewById(R.id.checkBox);
-        String lol = cursor.getString(cursor.getColumnIndex("title"));
-        Log.d("test", lol);
+
+
         // Set the textview and checkbox
         todo.setText(cursor.getString(cursor.getColumnIndex("title")));
-        //test.setText(cursor.getString(cursor.getColumnIndex("title")));
         Integer bool = cursor.getInt(cursor.getColumnIndex("completed"));
 
         // Check if the box has to be checked or not

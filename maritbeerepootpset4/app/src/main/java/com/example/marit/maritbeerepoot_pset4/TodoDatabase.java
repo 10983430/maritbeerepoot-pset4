@@ -32,10 +32,6 @@ public class TodoDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table todos (_id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, completed INTEGER);");
         ContentValues values =  new ContentValues();
-        values.put("title", "lol");
-        values.put("completed", 0);
-        db.insert("todos",null, values);
-        //SQLiteDatabase db = this.getWritableDatabase();
     }
 
     @Override
